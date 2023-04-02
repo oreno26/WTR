@@ -1,0 +1,13 @@
+i want to make a navigation ride planner
+so i need
+ 1. users(with a preferance for ridding temp)
+ 2. pages:
+  1.home/login
+     form with username and password, and a link to register also a slogan "WEATHER THE RIDE"
+  2.register
+     form with username email first and last name password AND a check box for preferance(hot cold normal) 
+  3.profile
+     a page where you can see and edit your info + rides you saved
+  4.map(with navigation) 
+     this is the big part, ill fill this out in a bit
+  5.Weather page (will work when not logged in) a page with weather for a default city(current location i hope)
