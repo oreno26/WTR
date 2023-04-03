@@ -56,7 +56,7 @@ const remove = async() =>{
   return (
     <>
       <Box sx={{ m: 2 }}>
-        <Container sx={{ border: 3 }} maxWidth="sm">
+        <Container style={{border:'10px double red', borderRadius:'20px', backgroundColor: 'darkgray'}} maxWidth="sm">
           <Stack
             direction="column"
             justifyContent="center"
@@ -69,7 +69,7 @@ const remove = async() =>{
             </p>
             <p>EMAIL: {user.email}</p>
             <p>RIDDING PREFERANCE: {user.pref}</p>
-            <Button sx={{ m: 1}} variant="outlined" onClick={() => remove()} >Delete Account</Button>
+            <Button sx={{ m: 2}} style={{backgroundColor: "white"}} variant="outlined" onClick={() => remove()} >Delete Account</Button>
            
           </Stack>
         </Container>

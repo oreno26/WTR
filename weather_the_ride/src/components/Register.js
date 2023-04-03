@@ -32,7 +32,7 @@ const Register = (props) => {
     <>
       <h1>Join The Ride</h1>
 
-      <Box component="form" sx={{ m: 1 }}>
+      <Box component="form" sx={{ m: 1 }} style={{textAlign:'center'}} >
         <TextField onChange={(e) => setEmail(e.target.value)} sx={{ m: 1 }} label="email" type="email" />
         <br/>
         <TextField onChange={(e) => setFname(e.target.value)} sx={{ m: 1 }} label="first name" />
@@ -44,7 +44,7 @@ const Register = (props) => {
         <TextField onChange={(e) => setPassword(e.target.value)} sx={{ m: 1 }} label="password" />
         <br/>
         <h3>I Prefer To Be</h3>
-        <RadioGroup onChange={(e) => setPref(e.target.value)} sx={{ m: 1}} defaultValue="mild" row name="Preferance">
+        <RadioGroup  onChange={(e) => setPref(e.target.value)} sx={{ m: 1}} defaultValue="mild" row name="Preferance">
           <Radio  value="hot" />
           hot
           <Radio value="mild" />
