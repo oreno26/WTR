@@ -6,6 +6,10 @@ import Button from "@mui/material/Button";
 import RoutingMachine from "./RoutingMachine";
 
 const Map = (props) => {
+  const [map, setMap] = useState(null);
+  const routingMachineRef = useRef();
+  const pluginRef = useRef();
+  
   const {
     youLat,
     setYouLat,
@@ -15,20 +19,21 @@ const Map = (props) => {
     setLng,
     setNavLat,
     setNavLng,
+    navLat
   } = useContext(AppContext);
 
-  const [map, setMap] = useState(null);
-  const routingMachineRef = useRef();
-  const pluginRef = useRef();
+  
 
-  // const mapp = useMap()
+useEffect(()=>{
+  console.log(navLat);
+},[navLat])
 
   useEffect(() => {
     if (!map) return;
     const controlContainer = routingMachineRef.current.onAdd(map);
     pluginRef.current.appendChild(controlContainer);
-  }, [map]);
-
+  }, [map,navLat]);
+  
   return (
     <div>
       <NavSearch />
@@ -43,6 +48,11 @@ const Map = (props) => {
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
+        <RoutingMachine navLat={navLat} ref={routingMachineRef} />
+        <Marker  position={[youLat, youLng]}>
+          <Popup>you are here.</Popup>
+        </Marker>
+
         <Marker position={[31.271202, 34.728679]}>
           <Popup>
             Motorcity Raceway
@@ -113,10 +123,6 @@ const Map = (props) => {
           </Popup>
         </Marker>
 
-        <Marker position={[youLat, youLng]}>
-          <Popup>you are here.</Popup>
-        </Marker>
-        <RoutingMachine ref={routingMachineRef} />
       </MapContainer>
       <div style={{ border: "1px solid red" }} ref={pluginRef} />
     </div>

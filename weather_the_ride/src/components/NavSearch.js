@@ -8,6 +8,7 @@ const NavSearch = (props) =>{
     const [orig, setOrig] = useState("")
     const [dest, setDest] = useState("")
     const {lat, lng ,youLat,youLng, setLat, setLng,navLat, navLng, setNavLat, setNavLng, APIkey} = useContext(AppContext)
+    
     const origin = async() =>{ 
         if (orig == "") 
     { setLat(youLat)

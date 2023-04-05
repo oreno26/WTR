@@ -4,6 +4,9 @@ import SearchCity from "./SearchCity";
 import GearCheck from "./GearCheck";
 // add weather pref
 const Weather = (props) => {
+  const [weather, setWeather] = useState([]);
+  const [city, setCity] = useState("");
+  const [gear, setGear] = useState("");
   const {
     lat,
     setLat,
@@ -16,9 +19,6 @@ const Weather = (props) => {
     APIkey,
     pref,
   } = useContext(AppContext);
-  const [weather, setWeather] = useState([]);
-  const [city, setCity] = useState("");
-  const [gear, setGear] = useState("");
   const dayArr = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
   useEffect(() => {
@@ -52,12 +52,12 @@ const Weather = (props) => {
           borderRadius: "20px",
         }}
       >
-        {weather.map((elem) => {
+        {weather.map((elem, i) => {
           let day = new Date(elem.dt_txt);
           let temp = elem.main.temp;
           if (day.getHours() == 21 || day.getHours() == 9) {
             return (
-              <div
+              <div key={i}
                 style={{
                   padding: "15px",
                   display: "inline-block",

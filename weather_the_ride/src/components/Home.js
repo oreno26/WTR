@@ -19,6 +19,8 @@ const Home = (props) => {
     const success = (position) => {
       setYouLat(position.coords.latitude);
       setYouLng(position.coords.longitude);
+      setLat(position.coords.latitude)
+      setLng(position.coords.longitude)
       setScdLat(position.coords.latitude);
       setScdLng(position.coords.longitude);
     };
@@ -44,7 +46,7 @@ const login = async() =>{
 
   return (
     <>
-      <h1>WELECOME RIDER</h1>
+      <h1>WELCOME RIDER</h1>
 
       <Box component="form" sx={{ m: 1 }} noValidate autoComplete="off">
         <TextField

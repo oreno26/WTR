@@ -2,8 +2,8 @@ import { AppContext } from "../App";
 import { useState, useEffect, useContext } from "react";
 
 const GearCheck = (props) => {
-  const { pref } = useContext(AppContext);
   const [gear, setGear] = useState("");
+  const { pref } = useContext(AppContext);
 
   useEffect(() => {
     if (pref == "cold") {

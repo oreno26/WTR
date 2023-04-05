@@ -1,12 +1,12 @@
 import L from "leaflet";
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import { createControlComponent } from "@react-leaflet/core";
 import "leaflet-routing-machine";
 import { AppContext } from "../App";
 
 const CreateRoutingMacineLayer = (props) => {
   const { lat, lng, navLat, navLng } = useContext(AppContext);
-  console.log(lat, lng, navLat, navLng);
+  console.log(lat, lng, navLat, navLng, props.navLat);
 
   const instance = L.Routing.control({
     waypoints: [L.latLng(lat, lng), L.latLng(navLat, navLng)],
@@ -17,6 +17,7 @@ const CreateRoutingMacineLayer = (props) => {
       styles: [{ color: "blue", weight: 5 }],
     },
     show: true,
+    autoRoute: true,
     addWaypoints: false,
     routeWhileDragging: false,
     draggableWaypoints: true,
