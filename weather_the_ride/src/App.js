@@ -26,6 +26,7 @@ function App() {
   const [youLat, setYouLat] = useState(0);
   const [youLng, setYouLng] = useState(0);
   const [pref, setPref] = useState("");
+  const [navLatLng, setNavLatLng] = useState({});
   const APIkey = "6df3745aef944431cf12362e153d4aad";
   return (
     <AppContext.Provider
@@ -51,8 +52,9 @@ function App() {
         pref,
         setPref,
         APIkey,
-      }}
-    >
+        navLatLng,
+        setNavLatLng,
+      }}>
       <div className="App">
         <header>
           <Nav />

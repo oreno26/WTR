@@ -5,7 +5,7 @@ const GearCheck = (props) => {
   const [gear, setGear] = useState("");
   const { pref } = useContext(AppContext);
 
-  useEffect(() => {
+  useEffect(() => { 
     if (pref == "cold") {
       if (props.temp < 15) {
         setGear("winter gear");

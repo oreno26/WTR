@@ -1,31 +1,50 @@
+import { useEffect, useContext } from "react";
 import L from "leaflet";
-import { useState, useContext, useEffect } from "react";
-import { createControlComponent } from "@react-leaflet/core";
+import "leaflet-routing-machine/dist/leaflet-routing-machine.css";
 import "leaflet-routing-machine";
+import { useMap } from "react-leaflet";
+
 import { AppContext } from "../App";
+L.Marker.prototype.options.icon = L.icon({
+  iconUrl: "https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png",
+});
 
-const CreateRoutingMacineLayer = (props) => {
-  const { lat, lng, navLat, navLng } = useContext(AppContext);
-  console.log(lat, lng, navLat, navLng, props.navLat);
+export default function RoutingMachine(props) {
+  const map = useMap();
+  const { lat, lng, navLat, navLng, navLatLng } = useContext(AppContext);
+  console.log("states=>", lat, lng, navLat, navLng,);
 
-  const instance = L.Routing.control({
-    waypoints: [L.latLng(lat, lng), L.latLng(navLat, navLng)],
-    router: L.Routing.mapbox(
-      "pk.eyJ1Ijoib3Jlbm92YWRpYSIsImEiOiJjbGZ0ZXlkdDUwMGFhM2ZtbXZvbzdibGFiIn0.eyOfUzi1vlEji9x6W-AFyA"
-    ),
-    lineOptions: {
-      styles: [{ color: "blue", weight: 5 }],
-    },
-    show: true,
-    autoRoute: true,
-    addWaypoints: false,
-    routeWhileDragging: false,
-    draggableWaypoints: true,
-    fitSelectedRoutes: true,
-    showAlternatives: false,
-  });
-  return instance;
-};
-const RoutingMachine = createControlComponent(CreateRoutingMacineLayer);
+  useEffect(() => {
+    console.log("RoutingMachine map =>>>>>>", map);
+    if (!map) return;
 
-export default RoutingMachine;
+    const routingControl = L.Routing.control({
+      waypoints: [
+        // 
+        L.latLng(lat, lng),
+        L.latLng(navLat, navLng),
+      ],
+      router: L.Routing.mapbox(
+        "pk.eyJ1Ijoib3Jlbm92YWRpYSIsImEiOiJjbGZ0ZXlkdDUwMGFhM2ZtbXZvbzdibGFiIn0.eyOfUzi1vlEji9x6W-AFyA"
+      ),
+      lineOptions: {
+        styles: [{ color: "blue", weight: 5 }],
+      },
+      autoRoute: true,
+      routeWhileDragging: true,
+      showAlternatives: false,
+      fitSelectedRoutes: true,
+    }).addTo(map);
+
+    return () => map.removeControl(routingControl);
+  },[navLatLng, navLat]);
+
+  return null;
+}
+
+//     autoRoute: true,
+//     addWaypoints: false,
+//     routeWhileDragging: false,
+//     draggableWaypoints: true,
+//     fitSelectedRoutes: true,
+//     showAlternatives: false,
