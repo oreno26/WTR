@@ -15,7 +15,9 @@ const NavSearch = (props) => {
     setLat,
     setLng,
     navLat,
-    navLng,
+    navLng, setScdLng,
+    
+    setScdLat,
     setNavLat,
     setNavLng,
     APIkey,
@@ -44,6 +46,8 @@ const NavSearch = (props) => {
       lng = data[0].lon;
       setLat(lat)
       setLng(lng)
+      setScdLng(lng)
+      setScdLat(lat)
     }
     const resNav = await fetch(
       `http://api.openweathermap.org/geo/1.0/direct?q=${dest.replace(

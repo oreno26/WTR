@@ -19,8 +19,7 @@ export default function RoutingMachine(props) {
     if (!map) return;
 
     const routingControl = L.Routing.control({
-      waypoints: [
-        // 
+      waypoints: [ 
         L.latLng(lat, lng),
         L.latLng(navLat, navLng),
       ],
@@ -37,7 +36,7 @@ export default function RoutingMachine(props) {
     }).addTo(map);
 
     return () => map.removeControl(routingControl);
-  },[navLatLng, navLat]);
+  },[lat, navLat]);
 
   return null;
 }
