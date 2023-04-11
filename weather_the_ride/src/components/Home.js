@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
+import Container from "@mui/material/Container";
 import axios from "axios";
 import { AppContext } from "../App";
 
@@ -46,11 +47,13 @@ const login = async() =>{
 
   return (
     <>
-      <h1>WELCOME RIDER</h1>
 
-      <Box component="form" sx={{ m: 1 }} noValidate autoComplete="off">
+      <Box component="form" sx={{ m: 10 }} style={{}} noValidate autoComplete="off">
+      <Container style={{border:'10px double red', borderRadius:'50px', backgroundColor: 'rgba(150, 150, 150, 0.5)'}} maxWidth="sm">
+      <h1 >WELCOME RIDER</h1>
         <TextField
           sx={{ m: 1 }}
+          // style={{backgroundColor: "white"}}
           id="username"
           label="RIDER"
           onChange={(e) => setUsername(e.target.value)}
@@ -59,12 +62,14 @@ const login = async() =>{
           sx={{ m: 1 }}
           id="password"
           label="PASSWORD"
-        //   type="password"
+          // style={{backgroundColor: "white"}}
+          type="password"
           onChange={(e) => setPassword(e.target.value)}
         />
+      <Button sx={{ m: 1}} style={{backgroundColor: "white"}} variant="outlined" onClick={()=> login()}>LogIn</Button>
+      <Button sx={{ m: 1}} style={{backgroundColor: "white"}} variant="outlined" component={Link} to='/register'>Sign Up</Button>
+      </Container>
       </Box>
-      <Button sx={{ m: 1}} variant="outlined" onClick={()=> login()}>LogIn</Button>
-      <Button sx={{ m: 1}} variant="outlined" component={Link} to='/register'>Sign Up</Button>
     </>
   );
 };

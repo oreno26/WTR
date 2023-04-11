@@ -5,7 +5,7 @@ import Stack from "@mui/material/Stack";
 const Nav = (props) => {
   return (
     <>
-      <Stack spacing={2} direction="row">
+      <Stack spacing={2} direction="row" style={{backgroundColor: 'darkgray', color: 'red'}}>
         <Button component={Link} to='/profile'>Profile</Button>
         <Button component={Link} to='/map'>map</Button>
         <Button component={Link} to='/weather'>weather</Button>

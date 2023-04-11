@@ -55,11 +55,11 @@ const remove = async() =>{
 }
   return (
     <>
-      <Box sx={{ m: 2 }}>
-        <Container style={{border:'10px double red', borderRadius:'20px', backgroundColor: 'darkgray'}} maxWidth="sm">
+      <Box sx={{ m: 10}}>
+        <Container style={{border:'10px double red', borderRadius:'50px', backgroundColor: 'rgba(150, 150, 150, 0.5)', paddingBottom: '10px'}} maxWidth="sm">
           <Stack
             direction="column"
-            justifyContent="center"
+            // justifyContent="center"
             alignItems="center"
             spacing={2}
           >

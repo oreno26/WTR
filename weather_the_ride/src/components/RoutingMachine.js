@@ -30,7 +30,7 @@ export default function RoutingMachine(props) {
         styles: [{ color: "blue", weight: 5 }],
       },
       autoRoute: true,
-      routeWhileDragging: true,
+      routeWhileDragging: false,
       showAlternatives: false,
       fitSelectedRoutes: true,
     }).addTo(map);

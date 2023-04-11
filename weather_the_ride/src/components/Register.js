@@ -5,6 +5,7 @@ import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import RadioGroup from "@mui/material/RadioGroup";
 import Radio from "@mui/material/Radio";
+import Container from "@mui/material/Container";
 import axios from "axios";
 
 const Register = (props) => {
@@ -30,21 +31,22 @@ const Register = (props) => {
   
   return (
     <>
-      <h1>Join The Ride</h1>
 
-      <Box component="form" sx={{ m: 1 }} style={{textAlign:'center'}} >
-        <TextField onChange={(e) => setEmail(e.target.value)} sx={{ m: 1 }} label="email" type="email" />
+      <Box component="form" sx={{ m: 2 }} style={{textAlign:'center'}} >
+      <Container style={{border:'10px double red', borderRadius:'50px', backgroundColor: 'rgba(150, 150, 150, 0.5)', paddingBottom: '10px'}} maxWidth="sm">
+      <h1>Join The Ride</h1>
+        <TextField  style={{backgroundColor: "white"}} onChange={(e) => setEmail(e.target.value)} sx={{ m: 1 }} label="email" type="email" />
         <br/>
-        <TextField onChange={(e) => setFname(e.target.value)} sx={{ m: 1 }} label="first name" />
+        <TextField  style={{backgroundColor: "white"}} onChange={(e) => setFname(e.target.value)} sx={{ m: 1 }} label="first name" />
         <br/>
-        <TextField onChange={(e) => setLname(e.target.value)} sx={{ m: 1 }} label="last name" />
+        <TextField  style={{backgroundColor: "white"}} onChange={(e) => setLname(e.target.value)} sx={{ m: 1 }} label="last name" />
         <br/>
-        <TextField onChange={(e) => setUsername(e.target.value)} sx={{ m: 1 }} label="username" />
+        <TextField  style={{backgroundColor: "white"}} onChange={(e) => setUsername(e.target.value)} sx={{ m: 1 }} label="username" />
         <br/>
-        <TextField onChange={(e) => setPassword(e.target.value)} sx={{ m: 1 }} label="password" />
+        <TextField  style={{backgroundColor: "white"}} type="password" onChange={(e) => setPassword(e.target.value)} sx={{ m: 1 }} label="password" />
         <br/>
         <h3>I Prefer To Be</h3>
-        <RadioGroup  onChange={(e) => setPref(e.target.value)} sx={{ m: 1}} defaultValue="mild" row name="Preferance">
+        <RadioGroup  style={{marginLeft: '30%'}} onChange={(e) => setPref(e.target.value)} sx={{ m: 1}} defaultValue="mild" row name="Preferance">
           <Radio  value="hot" />
           hot
           <Radio value="mild" />
@@ -52,8 +54,9 @@ const Register = (props) => {
           <Radio value="cold" />
           cold
         </RadioGroup>
+      <Button onClick={() => register()} style={{backgroundColor: "white"}} variant="outlined">Register</Button>
+      </Container>
       </Box>
-      <Button onClick={() => register()} variant="outlined">Register</Button>
     </>
   );
 };

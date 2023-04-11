@@ -82,7 +82,7 @@ const NavSearch = (props) => {
 
   return (
     <>
-      <Box component="form" noValidate>
+      <Box component="form" noValidate style={{backgroundColor: 'darkgray'}}>
         <TextField
           sx={{ m: 1 }}
           id="One"
