@@ -32,7 +32,7 @@ export const login = async (req, res) => {
       },
     });
     const match = await bcrypt.compare(req.body.password, user[0].password);
-    if (!match) return res.status(400).json({ msg: "wrong password" });
+    if (!match) return res.status(400).json({ msg: "username  or password not correct" });
 
     const userid = user[0].id;
     const username = user[0].username;
@@ -51,7 +51,7 @@ export const login = async (req, res) => {
     console.log(accessToken);
     res.json({ msg: `Welcome Back ${username}`, accessToken });
   } catch (e) {
-    res.status(404).json({ msg: "username not found" });
+    res.status(404).json({ msg: "username  or password not correct" });
   }
 };
 

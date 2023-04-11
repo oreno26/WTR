@@ -49,8 +49,9 @@ const login = async() =>{
     <>
 
       <Box component="form" sx={{ m: 10 }} style={{}} noValidate autoComplete="off">
-      <Container style={{border:'10px double red', borderRadius:'50px', backgroundColor: 'rgba(150, 150, 150, 0.5)'}} maxWidth="sm">
+      <Container style={{border:'10px double red', borderRadius:'50px', backgroundColor: 'rgba(200, 200, 200, 0.9)'}} maxWidth="sm">
       <h1 >WELCOME RIDER</h1>
+      <p style={{ fontSize: '1.2rem'}}> welcome to <b>Weather the Ride</b> your one stop shop to plan your next ride. <br/> so sign up, gear up and <b>ride safe!</b></p>
         <TextField
           sx={{ m: 1 }}
           // style={{backgroundColor: "white"}}

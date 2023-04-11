@@ -33,7 +33,7 @@ const Register = (props) => {
     <>
 
       <Box component="form" sx={{ m: 2 }} style={{textAlign:'center'}} >
-      <Container style={{border:'10px double red', borderRadius:'50px', backgroundColor: 'rgba(150, 150, 150, 0.5)', paddingBottom: '10px'}} maxWidth="sm">
+      <Container style={{border:'10px double red', borderRadius:'50px', backgroundColor: 'rgba(200, 200, 200, 0.9)', paddingBottom: '10px'}} maxWidth="sm">
       <h1>Join The Ride</h1>
         <TextField  style={{backgroundColor: "white"}} onChange={(e) => setEmail(e.target.value)} sx={{ m: 1 }} label="email" type="email" />
         <br/>

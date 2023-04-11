@@ -57,13 +57,13 @@ const Weather = (props) => {
         style={{
           backgroundColor: 'darkgray',
           // backgroundOpa: '0.5',
-          border: "0.5rem double crimson",
+          // border: "0.5rem double crimson",
           padding: "10px 250px",
           // width: "69vw",
           // height: "45vh",
           display: "inline-block",
-          margin: "10px",
-          borderRadius: "50px",
+          // margin: "10px",
+          // borderRadius: "50px",
         }}
         >
         <h1>Weather in {city}</h1>

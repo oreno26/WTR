@@ -17,7 +17,7 @@ const SearchCity = (props) =>{
 
     return(
         <>
-        <Box component="form" sx={{ m:1}} noValidate autoComplete="on">
+        <Box component="form"  style={{backgroundColor: 'darkgray'}} noValidate autoComplete="on">
          <TextField sx={{ m: 1}}
          id="city"
          label="CITY"
