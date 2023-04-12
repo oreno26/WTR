@@ -9,6 +9,7 @@ import Container from "@mui/material/Container";
 import axios from "axios";
 
 const Register = (props) => {
+  const [bike, setBike] = useState ('')
   const [username, setUsername] = useState('')
   const [fname, setFname] = useState('')
   const [lname, setLname] = useState('')
@@ -19,7 +20,7 @@ const Register = (props) => {
   const register = async () =>{
     try {
       let response = await axios.post('/register',{
-        username, email, fname, lname, pref, password
+        username, email, fname, lname, pref, password,bike
       });
       alert(response.data.msg)
       navigate('/')
@@ -42,6 +43,8 @@ const Register = (props) => {
         <TextField  style={{backgroundColor: "white"}} onChange={(e) => setLname(e.target.value)} sx={{ m: 1 }} label="last name" />
         <br/>
         <TextField  style={{backgroundColor: "white"}} onChange={(e) => setUsername(e.target.value)} sx={{ m: 1 }} label="username" />
+        <br/>
+        <TextField  style={{backgroundColor: "white"}} onChange={(e) => setBike(e.target.value)} sx={{ m: 1 }} label="Motorcycle" /> 
         <br/>
         <TextField  style={{backgroundColor: "white"}} type="password" onChange={(e) => setPassword(e.target.value)} sx={{ m: 1 }} label="password" />
         <br/>

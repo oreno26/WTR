@@ -29,6 +29,10 @@ const Users = db.define(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    bike: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     password: {
       type: DataTypes.STRING,
       allowNull: false,

@@ -65,10 +65,11 @@ const remove = async() =>{
           >
             <h1>{username.toUpperCase()}'S PROFILE</h1>
             <p>
-              NAME: {user.fname} {user.lname}
+              Name: {user.fname} {user.lname}
             </p>
-            <p>EMAIL: {user.email}</p>
-            <p>RIDING PREFERANCE: {user.pref}</p>
+            <p>Email: {user.email}</p>
+            <p>Riding preferance: {user.pref}</p>
+            <p>Bike of choice: {user.bike}</p>
             <Button sx={{ m: 2}} style={{backgroundColor: "white"}} variant="outlined" onClick={() => remove()} >Delete Account</Button>
            
           </Stack>

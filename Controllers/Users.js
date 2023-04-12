@@ -4,7 +4,7 @@ import jwt from "jsonwebtoken";
 import dotenv from "dotenv";
 
 export const register = async (req, res) => {
-  const { username, email, fname, lname, pref, password } = req.body;
+  const { username, email, fname, lname,bike, pref, password } = req.body;
 
   const salt = await bcrypt.genSalt();
   const hashPassword = await bcrypt.hash(password, salt);
@@ -15,6 +15,7 @@ export const register = async (req, res) => {
       fname: fname,
       lname: lname,
       pref: pref,
+      bike: bike,
       password: hashPassword,
     });
     res.json({ msg: `Welecome ${fname + " " + lname}! *FISTBUMP*` });
