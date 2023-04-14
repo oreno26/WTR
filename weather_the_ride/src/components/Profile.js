@@ -64,12 +64,14 @@ const remove = async() =>{
             spacing={2}
           >
             <h1>{username.toUpperCase()}'S PROFILE</h1>
+            <div style={{fontSize: '1.2rem'}}>
             <p>
               Name: {user.fname} {user.lname}
             </p>
             <p>Email: {user.email}</p>
             <p>Riding preferance: {user.pref}</p>
             <p>Bike of choice: {user.bike}</p>
+            </div>
             <Button sx={{ m: 2}} style={{backgroundColor: "white"}} variant="outlined" onClick={() => remove()} >Delete Account</Button>
            
           </Stack>

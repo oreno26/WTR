@@ -8,6 +8,7 @@ import Map from "./components/Map";
 import Home from "./components/Home";
 import Register from "./components/Register";
 import { Auth } from "./components/auth/Auth";
+import Footer from "./components/Footer";
 //npm
 import { Routes, Route } from "react-router-dom";
 import { useState, createContext, useEffect } from "react";
@@ -58,6 +59,7 @@ function App() {
       <div className="App">
         <header>
           <Nav />
+          <Footer />
 
           <Routes>
             <Route path="/" element={<Home />} />

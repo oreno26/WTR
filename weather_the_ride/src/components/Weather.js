@@ -62,7 +62,7 @@ const Weather = (props) => {
           // width: "69vw",
           // height: "45vh",
           display: "inline-block",
-          // margin: "10px",
+          marginBottom: '12px'
           // borderRadius: "50px",
         }}
         >
@@ -118,6 +118,7 @@ const Weather = (props) => {
                   width: "120px",
                   borderRadius: "50px",
                   backgroundColor: "darkgrey",
+                  
                 }}
               >
                 <div>

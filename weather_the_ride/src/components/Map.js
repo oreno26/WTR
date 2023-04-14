@@ -46,7 +46,7 @@ const Map = (props) => {
     <div>
       <NavSearch />
       <MapContainer
-        style={{ width: "99vw", height: "85vh" }}
+        style={{ width: "100vw", height: "83vh" }}
         center={[youLat, youLng]}
         zoom={10}
         scrollWheelZoom={true}
