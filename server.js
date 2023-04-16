@@ -17,6 +17,14 @@ app.use(express.urlencoded({extended:true}))
 
 app.use(router)
 
+const __dirname = path.resolve();
+
+app.use(express.static(path.join(__dirname, './weather_the_ride/build')))
+
+app.get('*', (req,res)=>{
+res.sendFile(path.resolve(__dirname, './weather_the_ride/build', 'index.html'))
+})
+
 
 app.listen(process.env.PORT || 8000, ()=>{
     console.log(`yoyo im on${process.env.PORT || 8000}`);
