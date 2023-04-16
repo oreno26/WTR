@@ -35,13 +35,13 @@ const Register = (props) => {
       <Box component="form" sx={{ m: 2 }} style={{textAlign:'center'}} >
       <Container style={{border:'10px double red', borderRadius:'50px', backgroundColor: 'rgba(200, 200, 200, 0.9)', paddingBottom: '10px'}} maxWidth="sm">
       <h1>Join The Ride</h1>
-        <TextField  style={{backgroundColor: "white"}} onChange={(e) => setEmail(e.target.value)} sx={{ m: 1 }} label="email" type="email" />
+        <TextField  style={{backgroundColor: "white"}} onChange={(e) => setEmail(e.target.value)} sx={{ m: 1 }} label="Email" type="email" />
         <br/>
-        <TextField  style={{backgroundColor: "white"}} onChange={(e) => setFname(e.target.value)} sx={{ m: 1 }} label="first name" />
+        <TextField  style={{backgroundColor: "white"}} onChange={(e) => setFname(e.target.value)} sx={{ m: 1 }} label="First Name" />
         <br/>
-        <TextField  style={{backgroundColor: "white"}} onChange={(e) => setLname(e.target.value)} sx={{ m: 1 }} label="last name" />
+        <TextField  style={{backgroundColor: "white"}} onChange={(e) => setLname(e.target.value)} sx={{ m: 1 }} label="Last Name" />
         <br/>
-        <TextField  style={{backgroundColor: "white"}} onChange={(e) => setUsername(e.target.value)} sx={{ m: 1 }} label="username" />
+        <TextField  style={{backgroundColor: "white"}} onChange={(e) => setUsername(e.target.value)} sx={{ m: 1 }} label="Username" />
         <br/>
         <TextField  style={{backgroundColor: "white"}} onChange={(e) => setBike(e.target.value)} sx={{ m: 1 }} label="Motorcycle" /> 
         <br/>
@@ -50,11 +50,11 @@ const Register = (props) => {
         <h3>I Prefer To Be</h3>
         <RadioGroup  style={{marginLeft: '30%'}} onChange={(e) => setPref(e.target.value)} sx={{ m: 1}} defaultValue="mild" row name="Preferance">
           <Radio  value="hot" />
-          hot
+          Hot
           <Radio value="mild" />
-          mild
+          Mild
           <Radio value="cold" />
-          cold
+          Cold
         </RadioGroup>
       <Button onClick={() => register()} style={{backgroundColor: "white"}} variant="outlined">Register</Button>
       </Container>

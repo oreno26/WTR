@@ -66,8 +66,8 @@ const remove = async() =>{
               Name: {user.fname} {user.lname}
             </p>
             <p>Email: {user.email}</p>
-            <p>Riding preferance: {user.pref}</p>
-            <p>Bike of choice: {user.bike}</p>
+            <p>Riding Preferance: {user.pref}</p>
+            <p>Bike of Choice: {user.bike}</p>
             </div>
             <Button sx={{ m: 2}} style={{backgroundColor: "white"}} variant="outlined" onClick={() => remove()} >Delete Account</Button>
            
