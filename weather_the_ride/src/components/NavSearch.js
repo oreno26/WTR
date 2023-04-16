@@ -56,7 +56,7 @@ const NavSearch = (props) => {
       )}&limit=5&appid=${APIkey}`
     );
     const dataNav = await resNav.json();
-    console.log("dataNav=====>", dataNav);
+    // console.log("dataNav=====>", dataNav);
     const latNav = dataNav[0].lat;
     const lngNav = dataNav[0].lon;
     setNavLat(latNav)
@@ -65,20 +65,6 @@ const NavSearch = (props) => {
     setNavLatLng({ lat, lng, latNav, lngNav });
 
   };
-  // const destination = async () => {
-  //   fetch(
-  //     `http://api.openweathermap.org/geo/1.0/direct?q=${dest.replace(
-  //       " ",
-  //       "+"
-  //     )}&limit=5&appid=${APIkey}`
-  //   )
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       setNavLat(data[0].lat);
-  //       setNavLng(data[0].lon);
-  //       console.log(data);
-  //     });
-  // };
 
   return (
     <>

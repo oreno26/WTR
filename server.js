@@ -4,6 +4,7 @@ import cors from "cors"
 import dotenv from "dotenv"
 import db from './Conifg/db.js'
 import router from './Routes/Users.js'
+import path from 'path'
 
 dotenv.config();
 const app = express()

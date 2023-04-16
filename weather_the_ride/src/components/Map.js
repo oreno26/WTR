@@ -57,7 +57,15 @@ const Map = (props) => {
         />
         <RoutingMachine navLatLng={navLatLng} />
       <Marker icon={redIcon} position={[youLat, youLng]}>
-          <Popup>you are here.</Popup>
+          <Popup>you are here.
+          <Button
+              onClick={() => {
+                setLat(youLat);
+                setLng(youLng);
+              }}>
+              Navigate from here
+            </Button>
+            </Popup>
         </Marker> 
 
         <Marker position={[31.271202, 34.728679]}>

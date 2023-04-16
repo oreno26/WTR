@@ -10,4 +10,5 @@ so i need
      a page where you can see and edit your info + rides you saved
   4.map(with navigation) 
      this is the big part, ill fill this out in a bit
-  5.Weather page (will work when not logged in) a page with weather for a default city(current location i hope)
+  5.Weather page (will work when not logged in) a page with weather for a 
+  default city(current location i hope)

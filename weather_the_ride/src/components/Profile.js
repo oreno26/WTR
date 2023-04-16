@@ -16,26 +16,24 @@ const Profile = (props) => {
 
   useEffect(() => {
     try {
-      console.log(accessToken);
+     
       const decode = jwt_decode(accessToken.accessToken);
       setUsername(decode.username);
-      console.log(decode.username);
+
       getUser(decode.username);
     } catch (e) {
       console.log("nope");
-      // navigate("/");
+      
     }
   }, []);
 
   const getUser = async (username) => {
-    console.log(username);
     try {
       let response = await axios.post("/profile", {
         username,
       });
       setUser(response.data);
       setPref(response.data.pref)
-      console.log(response.data);
     } catch (e) {
       console.log(e);
       console.log(e.response);
@@ -59,7 +57,6 @@ const remove = async() =>{
         <Container style={{border:'10px double red', borderRadius:'50px', backgroundColor: 'rgba(200, 200, 200, 0.9)', paddingBottom: '10px'}} maxWidth="sm">
           <Stack
             direction="column"
-            // justifyContent="center"
             alignItems="center"
             spacing={2}
           >

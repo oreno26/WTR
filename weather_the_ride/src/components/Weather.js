@@ -51,21 +51,18 @@ const Weather = (props) => {
 
   return (
     <>
-<SearchCity />
+      <SearchCity />
 
       <div
         style={{
-          backgroundColor: 'darkgray',
-          // backgroundOpa: '0.5',
-          // border: "0.5rem double crimson",
+          backgroundColor: "darkgray",
+
           padding: "10px 250px",
-          // width: "69vw",
-          // height: "45vh",
+
           display: "inline-block",
-          marginBottom: '12px'
-          // borderRadius: "50px",
+          marginBottom: "12px",
         }}
-        >
+      >
         <h1>Weather in {city}</h1>
         {weather.map((elem, i) => {
           let day = new Date(elem.dt_txt);
@@ -79,14 +76,14 @@ const Weather = (props) => {
                   display: "inline-block",
                   border: "10px double red",
                   margin: "5px",
-                  height: '228px',
+                  height: "228px",
                   width: "120px",
                   borderRadius: "50px",
                   backgroundColor: "darkgrey",
                 }}
               >
                 <div>
-                  <p style={{ fontWeight: "bold", marginTop: '0' }}>
+                  <p style={{ fontWeight: "bold", marginTop: "0" }}>
                     {dayArr[day.getDay()]}{" "}
                     {day.getHours() == 21 ? "Night" : "Day"}{" "}
                   </p>
@@ -101,7 +98,7 @@ const Weather = (props) => {
             );
           }
         })}
-        <h2 style={{marginTop: '50px'}}>Weather in {destCity}</h2>
+        <h2 style={{ marginTop: "50px" }}>Weather in {destCity}</h2>
         {destWeather.map((elem, i) => {
           let day = new Date(elem.dt_txt);
           let temp = elem.main.temp;
@@ -114,15 +111,14 @@ const Weather = (props) => {
                   display: "inline-block",
                   border: "10px double red",
                   margin: "5px",
-                  height: '228px',
+                  height: "228px",
                   width: "120px",
                   borderRadius: "50px",
                   backgroundColor: "darkgrey",
-                  
                 }}
               >
                 <div>
-                  <p style={{ fontWeight: "bold",marginTop: '0' }}>
+                  <p style={{ fontWeight: "bold", marginTop: "0" }}>
                     {dayArr[day.getDay()]}{" "}
                     {day.getHours() == 21 ? "Night" : "Day"}{" "}
                   </p>

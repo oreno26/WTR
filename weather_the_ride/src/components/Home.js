@@ -30,13 +30,13 @@ const Home = (props) => {
   }, []);
 
 const login = async() =>{
-    console.log(username , password);
+      
     try {
         let response = await axios.post('/login',{
             username,password
         });
         setAccessToken(response.data.accessToken);
-        console.log(response.data.accessToken);
+        
         alert(response.data.msg)
         navigate('/profile')
     } catch (e) {

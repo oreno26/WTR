@@ -41,13 +41,13 @@ export const login = async (req, res) => {
       { userid, username },
       process.env.ACCESS_TOKEN_SECRET,
       {
-        expiresIn: "60s",
+        expiresIn: "300s",
       }
     );
 
     res.cookie("accessToken", accessToken, {
       httpOnly: true,
-      maxAge: 60 * 1000,
+      maxAge: 300 * 1000,
     });
     console.log(accessToken);
     res.json({ msg: `Welcome Back ${username}`, accessToken });

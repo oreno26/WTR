@@ -25,7 +25,6 @@ const Register = (props) => {
       alert(response.data.msg)
       navigate('/')
     } catch (e) {
-      console.log(e.response.data)
       alert(e.response.data.msg)
     }
   }
