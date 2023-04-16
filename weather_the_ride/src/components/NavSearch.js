@@ -35,7 +35,7 @@ const NavSearch = (props) => {
       setLng(youLng)
     } else {
       let res = await fetch(
-        `http://api.openweathermap.org/geo/1.0/direct?q=${orig.replace(
+        `https://api.openweathermap.org/geo/1.0/direct?q=${orig.replace(
           " ",
           "+"
         )}&limit=5&appid=${APIkey}`
@@ -50,7 +50,7 @@ const NavSearch = (props) => {
       setScdLat(lat)
     }
     const resNav = await fetch(
-      `http://api.openweathermap.org/geo/1.0/direct?q=${dest.replace(
+      `https://api.openweathermap.org/geo/1.0/direct?q=${dest.replace(
         " ",
         "+"
       )}&limit=5&appid=${APIkey}`
