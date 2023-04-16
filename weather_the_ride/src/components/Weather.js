@@ -27,7 +27,7 @@ const Weather = (props) => {
 
   useEffect(() => {
     fetch(
-      `http://api.openweathermap.org/data/2.5/forecast?lat=${scdLat.toFixed(
+      `https://api.openweathermap.org/data/2.5/forecast?lat=${scdLat.toFixed(
         2
       )}&lon=${scdLng.toFixed(2)}&appid=${APIkey}&units=metric`
     )
@@ -38,7 +38,7 @@ const Weather = (props) => {
       });
 
     fetch(
-      `http://api.openweathermap.org/data/2.5/forecast?lat=${navLat.toFixed(
+      `https://api.openweathermap.org/data/2.5/forecast?lat=${navLat.toFixed(
         2
       )}&lon=${navLng.toFixed(2)}&appid=${APIkey}&units=metric`
     )
